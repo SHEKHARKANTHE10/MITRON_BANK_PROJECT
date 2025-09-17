@@ -10,3 +10,71 @@ Stakeholder: Mr. Bashnir Rover
  ● Spending Insights: Where do people spend money the most? Does it have any impact due to occupation, gender, city, age etc.? This can help you to add relevant credit card features for specific target groups.  
  ● Key Customer Segments: By doing above, you should be able to identify and profile key customer segments that are likely to be the highest-value users of the new credit cards. This includes understanding their       demographics, spending behaviours, and financial preferences.  
  ● Credit Card Feature Recommendations: Provide recommendations on what key features should be included in the credit card which will improve the likelihood of credit card usage. This should be backed by the           insights from data provided and also some secondary research on the internet for this.  
+
+## 2. PREPARE
+### Data Storage:
+The public dataset is completely available on the Code basis website platform where it stores and consolidates all available datasets for analysis. The specific individual datasets at hand can be obtained at this link below: https://codebasics.io/challenge/codebasics-resume-project-challenge.
+
+### Data Organized:
+The dataset is taken from the AtliQ. Thanks to the AtliQ for providing datasets for public access which is a great learning asset - feel free to explore them. This dataset contains only 2 csv file and 1 text file (meta_data)  
+
+## 3. PROCESS  
+### Tools Used:  
+ ● Microsoft Excel  
+ ● Power BI  
+ ### Data Used:  
+  dim_customers, fact_spends
+
+### About Data:
+Column Description for dim_customers:
+
+  ● customer_id: This column represents the Unique ID assigned to each customer.  
+  ● gender: This column represents the gender of the customer. (Male, Female)  
+  ● age_group: This column categorizes the customer into different age groups. (21-24, 25-34, 35-45, 45+)  
+  ● marital_status: This column indicates the marital status of the customer (single, married).  
+  ● city: This column represents the city of residence for the customer. (Mumbai, Delhi-NCR, Chennai, Hyderabad, Bengaluru)  
+  ● occupation: This column denotes the occupation or profession of the customer. (Salaried IT Employees, Salaried Other Employees, Business Owners, Freelancers, Government Employees)
+    average_income: This column indicates the monthly average income of the customer, in INR currency.  
+
+Column Description for fact_spends:
+
+ ● customer_id: This column represents the Unique ID of each customer, linking to the dim_customer table.  
+ ● month: This column indicates the month in which the spending was recorded. (May, June, July, August, September, October)  
+ ● category: This column describes the category of spending (Entertainment, Apparel, Electronics, etc).  
+ ● payment_type: This column specifies the type of payment used by the customer (Debit Card, Credit Card, UPI, Net Banking).  
+ ● spends: This column shows the total amount spent by the customer in the specified month, category and payment_type.  
+
+Data Cleaning & Transformation:
+Microsoft Excel was used to clean and transform raw data.
+Duplicates were checked and removed.
+Gaps were checked with the TRIM function.
+Delhi NCR change into New Delhi
+4. ANALYZE
+Data Analyzing
+Power BI was used to analyze data.
+
+Key Metrics:
+Avg income utilisation%: Find the average income utilisation % of customers (avg_spends/avg_income). The higher the average income utilisation%, the more is their likelihood to use credit cards.
+
+KPIs:
+Annual Expenditure = [Expenditure]*2
+Annual Income = [Income]*2
+Average Monthly Spend = AVERAGE(fact_spends[spend])
+Credit Card = CALCULATE([Utilisation %], fact_spends[payment_type]="Credit Card")
+Customers = COUNT(dim_customers[customer_id])
+Expenditure = SUM(fact_spends[spend])
+Expenditure* = SUM(fact_spends[spend])/6
+Female = CALCULATE([Customers], dim_customers[gender]="Female")
+Female Utilization = CALCULATE([Utilisation %], dim_customers[gender]="Female")
+Income = SUM(dim_customers[income])
+Income* = SUM(dim_customers[avg_income])
+Male = CALCULATE([Customers], dim_customers[gender]="Male")
+Male Utilization = CALCULATE([Utilisation %], dim_customers[gender]="Male")
+Male% = [Male]/[Customers]
+Net Banking = CALCULATE([Utilisation %], fact_spends[payment_type]="Net Banking")
+Saving = [Income]-[Expenditure]
+Saving* = [Income*]-[Expenditure*]
+Transaction = COUNT(fact_spends[customer_id])
+UPI = CALCULATE([Utilisation %], fact_spends[payment_type]="UPI")
+Utilisation % = [Expenditure*]/[Income*]
+5. SHARE

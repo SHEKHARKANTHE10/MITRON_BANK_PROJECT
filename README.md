@@ -79,3 +79,22 @@ Avg income utilisation%: Find the average income utilisation % of customers (avg
  ● UPI = CALCULATE([Utilisation %], fact_spends[payment_type]="UPI")  
  ● Utilisation % = [Expenditure*]/[Income*]  
 
+# 6. ACT  
+## Insights:  
+ ● Key Metrics: Customer: 4000, Male: 2597, Female: 1403, Total Transactions: 864K, Total Income: 1240M, Total Expenditure: 531M, Average Income Utilization: 42.82%  
+ ● Age group distribution shows a peak in the 25-35 category, with a total of 1498 individuals.  
+ ● Mumbai city boasts the highest count with 1078 customers.  
+ ● Credit cards lead in spending, totaling $216 million, with a utilization rate of 17.45%.  
+ ● September emerges as the peak spending month, totaling $116 million, constituting 21.84% of the total spend.  
+ ● Males exhibit a higher income utilization rate at 44.39%, compared to females at 39.92%.  
+## Recommendations:  
+ ● Offering cashback or No Cost EMI options during September and August can drive credit card sales, especially during festive seasons when customer spending peaks.  
+ ● Target audience comprises married males aged 25-34 working in the IT sector & residing in Mumbai. Their higher income levels make it easier for them to manage credit card repayments.  
+ ● Spending patterns, Bills (105M) and Groceries (85M) are the top categories. Offering reward points specifically in these categories could significantly boost credit card usage, leading to increased credit        charges.  
+ ● Credit cards and UPI are the most preferred modes of payment. By integrating credit card options within UPI apps, we can significantly boost the indirect use of credit cards.    
+Thank you for reading and evaluating my repo :)  
+Live Dashboard Link
+
+
+
+

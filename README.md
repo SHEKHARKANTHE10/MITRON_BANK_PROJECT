@@ -44,33 +44,34 @@ Column Description for fact_spends:
  ● payment_type: This column specifies the type of payment used by the customer (Debit Card, Credit Card, UPI, Net Banking).  
  ● spends: This column shows the total amount spent by the customer in the specified month, category and payment_type.  
 
-Data Cleaning & Transformation:
-Microsoft Excel was used to clean and transform raw data.
-Duplicates were checked and removed.
-Gaps were checked with the TRIM function.
-Delhi NCR change into New Delhi
-4. ANALYZE
-Data Analyzing
+### Data Cleaning & Transformation:
+ ● Microsoft Excel was used to clean and transform raw data.  
+ ● Duplicates were checked and removed.  
+ ● Gaps were checked with the TRIM function.  
+ ● Delhi NCR change into New Delhi  
+
+## 4. ANALYZE  
+Data Analyzing  
 Power BI was used to analyze data.
 
-Key Metrics:
+## Key Metrics:  
 Avg income utilisation%: Find the average income utilisation % of customers (avg_spends/avg_income). The higher the average income utilisation%, the more is their likelihood to use credit cards.
 
-KPIs:
-Annual Expenditure = [Expenditure]*2
-Annual Income = [Income]*2
-Average Monthly Spend = AVERAGE(fact_spends[spend])
-Credit Card = CALCULATE([Utilisation %], fact_spends[payment_type]="Credit Card")
-Customers = COUNT(dim_customers[customer_id])
-Expenditure = SUM(fact_spends[spend])
-Expenditure* = SUM(fact_spends[spend])/6
-Female = CALCULATE([Customers], dim_customers[gender]="Female")
-Female Utilization = CALCULATE([Utilisation %], dim_customers[gender]="Female")
-Income = SUM(dim_customers[income])
-Income* = SUM(dim_customers[avg_income])
-Male = CALCULATE([Customers], dim_customers[gender]="Male")
-Male Utilization = CALCULATE([Utilisation %], dim_customers[gender]="Male")
-Male% = [Male]/[Customers]
+## KPIs:  
+ ● Annual Expenditure = [Expenditure]*2  
+ ● Annual Income = [Income]*2  
+ ● Average Monthly Spend = AVERAGE(fact_spends[spend])  
+ ● Credit Card = CALCULATE([Utilisation %], fact_spends[payment_type]="Credit Card")  
+ ● Customers = COUNT(dim_customers[customer_id])  
+ ● Expenditure = SUM(fact_spends[spend])  
+ ● Expenditure* = SUM(fact_spends[spend])/6  
+ ● Female = CALCULATE([Customers], dim_customers[gender]="Female")  
+ ● Female Utilization = CALCULATE([Utilisation %], dim_customers[gender]="Female")  
+ ● Income = SUM(dim_customers[income])  
+ ● Income* = SUM(dim_customers[avg_income])  
+ ● Male = CALCULATE([Customers], dim_customers[gender]="Male")  
+ ● Male Utilization = CALCULATE([Utilisation %], dim_customers[gender]="Male")  
+ ● Male% = [Male]/[Customers]
 Net Banking = CALCULATE([Utilisation %], fact_spends[payment_type]="Net Banking")
 Saving = [Income]-[Expenditure]
 Saving* = [Income*]-[Expenditure*]
